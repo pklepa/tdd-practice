@@ -1,17 +1,9 @@
 function analyze(array) {
-  function getAverage(arr) {
-    const total;
-    total = arr.reduce((total, current) => {
-                     return total + current
-                  }, 0)
-
-    return total / array.length
-  }
-
-
-
   const result = {
-    average: getAverage(array)
+    average: array.reduce((sum, current) => sum + current, 0) / array.length,
+    min: array.slice().sort((a, b) => a - b)[0],
+    max: array.slice().sort((a, b) => b - a)[0],
+    length: array.length
   }
 
   return result
